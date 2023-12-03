@@ -1,0 +1,13 @@
+retry:
+  maxAttempts: 4    # retry in case of exception
+  maxDelay: 1100    # delay between retries in milliseconds
+
+KafkaGeneral:
+  defaultBootstrapAddress: !ENV_VAR ${KAFKA_BOOTSTRAP_SERVERS}
+  defaultGroupId: test
+  consumer:
+    topic: TEST-IN
+    autoCommit: false
+    pollRecords: 1
+    pollIntervalMs: 18000000
+    consumersConcurrency: 2
