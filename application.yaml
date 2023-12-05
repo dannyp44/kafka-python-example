@@ -2,7 +2,7 @@ retry:
   maxAttempts: 3    # retry in case of exception
   maxDelay: 1000    # delay between retries in milliseconds
 
-KafkaGeneral:
+kafkaGeneral:
   defaultBootstrapAddress: !ENV_VAR ${KAFKA_BOOTSTRAP_SERVERS}
   defaultGroupId: test
   consumer:

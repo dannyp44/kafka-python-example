@@ -28,13 +28,15 @@ with open('application.yaml', 'r') as stream:
     config = yaml.safe_load(stream)
    
     # Read retry configuration
-    max_attempts = config.get('retry', {}).get('maxAttempts', 3)
-    delay = config.get('retry', {}).get('maxDelay', 1000)  
+    retry_config = config.get('retry', {})
+    max_attempts = retry_config.get('maxAttempts', 3)
+    delay = retry_config.get('maxDelay', 1000)  
    
     # Read kafka configuration
-    bootstrap_servers = config['KafkaGeneral']['defaultBootstrapAddress']
-    defaultGroupId = config['KafkaGeneral']['defaultGroupId']
-    consumer = config['KafkaGeneral']['consumer'] 
+    kafkaGeneral = config['kafkaGeneral']
+    bootstrap_servers = kafkaGeneral['defaultBootstrapAddress']
+    defaultGroupId = kafkaGeneral['defaultGroupId']
+    consumer = kafkaGeneral['consumer'] 
     topic = consumer['topic']
     autoCommit = consumer['autoCommit']
     pollRecords = consumer['pollRecords']
