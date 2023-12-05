@@ -1,6 +1,6 @@
 retry:
-  maxAttempts: 4    # retry in case of exception
-  maxDelay: 1100    # delay between retries in milliseconds
+  maxAttempts: 3    # retry in case of exception
+  maxDelay: 1000    # delay between retries in milliseconds
 
 KafkaGeneral:
   defaultBootstrapAddress: !ENV_VAR ${KAFKA_BOOTSTRAP_SERVERS}
