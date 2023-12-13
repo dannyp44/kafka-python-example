@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  skeleton-python:
+    image: skeleton-python:1.0    
+    network_mode: host
+    container_name: skeleton

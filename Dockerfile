@@ -18,4 +18,4 @@ EXPOSE 80
 ENV PYTHONUNBUFFERED 1
 
 # Run app.py when the container launches
-CMD ["python", "skeleton.py"]
+CMD ["python", "skeleton/main.py"]
